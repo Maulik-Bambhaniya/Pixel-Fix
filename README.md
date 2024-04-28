@@ -7,9 +7,8 @@ Pixel Fix is a web application built with Flask that provides an AI-driven solut
 ## Table of Contents
 
 - [Installation](#installation)
+- [Dependencies](#dependencies)
 - [Features](#features)
-- [Contributing](#contributing)
-- [Credits](#credits)
 - [Contact](#contact)
 
 ## Installation 
@@ -26,6 +25,7 @@ To install PixelFix, follow these steps:
 8. You are all set to go 
 
 ## Dependencies
+
 -Flask: Web framework for Python.
 -Werkzeug: WSGI utility library for Python.
 -image_enhancer: Custom module for enhancing images using machine learning algorithms.
@@ -33,11 +33,9 @@ To install PixelFix, follow these steps:
 -Other dependencies specified in requirements.txt.
 
 ## Features
-- Secure Authentication
-- Anonymous User Profiles
-- Create and interact with peers post
-- join channels and discussions with peers
-- Privacy and Security
+
+- User Authentication
+- Batch Processing
 
 
 
