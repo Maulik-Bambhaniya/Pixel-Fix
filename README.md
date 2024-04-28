@@ -41,4 +41,4 @@ To install PixelFix, follow these steps:
 
 ## Contact
 
-If you have any questions, concerns, or feedback about Connectiify, please feel free to contact us at [contact@example.com](mailto:maulik304@gmail.com).
+If you have any questions, concerns, or feedback about Connectiify, please feel free to contact us at [HERE](mailto:maulik304@gmail.com).
