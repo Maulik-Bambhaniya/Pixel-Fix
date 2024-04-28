@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Fix</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS from your CSS file */
+        body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            margin: 0;
+            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif; /* Keeping your font */
+        }
+
+        .container {
+            max-width: auto;
+            padding: 0 15px; /* Add padding for better responsiveness */
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 9999; /* Ensure logo is above other content */
+            max-width: 100%; /* Make the logo responsive */
+            height: auto; /* Allow height to adjust automatically */
+        }
+
+        .header-text {
+            font-size: 6vw; /* Relative font size */
+            color: #0000ff;
+            font-weight: bold;
+            margin-bottom: 5%;
+            line-height: 1;
+        }
+
+        .sub-text {
+            color: #666;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative; /* Ensure subtext stays above the image */
+            z-index: 1; /* Ensure subtext appears above the image */
+        }
+
+        .upload-btn {
+            font-size: 1.2rem; /* Adjusted font size */
+            padding: 8px 16px; /* Adjusted padding */
+            background-color: #add8e6;
+            color: #0000ff;
+            border-color: #add8e6;
+            border-radius: 25px; /* Adjusted border radius */
+        }
+
+        .upload-icon {
+            font-size: 1.5rem;
+            color: #0000ff;
+            margin-right: auto;
+        }
+
+        .square-box {
+            position: absolute;
+            top: 50%;
+            right: 20px; /* Adjust right position */
+            transform: translateY(-50%); /* Center vertically */
+            width: 80%; /* Adjusted width for responsiveness */
+            max-width: 500px; /* Max width for larger screens */
+            height: auto;
+            z-index: 0; /* Ensure the image stays below other content */
+        }
+        
+        .square-box img {
+            width: 100%; /* Make image fill the container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure proper alignment */
+        }
+
+        .custom-file {
+            width: auto; /* Auto width for the file input */
+            text-align: center; /* Center the text */
+        }
+        
+        .upload-btn-container {
+            text-align: center; /* Center the button */
+            margin-top: 5%;
+        }
+        
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Media query for adjusting font size on smaller screens */
+        @media (max-width: 768px) {
+            .header-text {
+                font-size: 8vw; /* Relative font size */
+            }
+        }
+    </style>
+</head>
+<body class="fade-in">
+    <!-- Clickable Logo -->
+    <a href="/" class="logo">
+        <img src="static/images/logo.jpg" alt="Logo">
+    </a>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header-text">
+            <span style="color: black;">Pixel</span> Fix
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="sub-text">A AI-driven solution enhances the quality of grainy and blurry photos.</div>
+            </div>
+            <div class="col-md-6">
+                <!-- Updated with Before & After image provided by your friend -->
+                <div class="square-box">
+                    <img src="static/images/Before&After.PNG" alt="Before and After">
+                </div>
+            </div>
+        </div>
+
+        <!-- File Upload Form -->
+        <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data" class="mb-4">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="file" accept="image/*" multiple>
+                <label class="custom-file-label" for="customFile">Choose files</label>
+                <div class="upload-btn-container"> <!-- Button container to center the button -->
+                    <button type="submit" class="btn btn-primary upload-btn">
+                        <i class="fas fa-plus upload-icon"></i> Upload
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Update custom file input label with selected file names
+        document.getElementById('customFile').addEventListener('change', function(e) {
+            var fileName = '';
+            for (var i = 0; i < this.files.length; i++) {
+                fileName += this.files[i].name + ', ';
+            }
+            fileName = fileName.slice(0, -2);
+            var nextSibling = e.target.nextElementSibling;
+            nextSibling.innerText = fileName;
+        });
+    </script>
+</body>
+</html>
