@@ -26,11 +26,11 @@ To install PixelFix, follow these steps:
 
 ## Dependencies
 
--Flask: Web framework for Python.
--Werkzeug: WSGI utility library for Python.
--image_enhancer: Custom module for enhancing images using machine learning algorithms.
--TensorFlow: Deep learning framework for building and training models.
--Other dependencies specified in requirements.txt.
+- Flask: Web framework for Python.
+- Werkzeug: WSGI utility library for Python.
+- Image_enhancer: Custom module for enhancing images using machine learning algorithms.
+- TensorFlow: Deep learning framework for building and training models.
+- Other dependencies specified in requirements.txt.
 
 ## Features
 
