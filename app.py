@@ -44,5 +44,3 @@ def add_timestamp_to_filename(filename):
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     name, ext = os.path.splitext(filename)
     return f"{name}_{timestamp}{ext}"
-if __name__ == '__main__':
-    app.run(debug=True)
