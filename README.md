@@ -1,4 +1,4 @@
-##PIXEL FIX
+# PIXEL FIX
 
 ### Definition: 
 Pixel Fix is a web application built with Flask that provides an AI-driven solution to enhance the quality of grainy and blurry photos. This project aims to simplify the process of improving image quality by leveraging machine learning algorithms.
