@@ -6,7 +6,7 @@ import RRDBNet_arch as arch
 
 # Load the model once when the application starts
 MODEL_PATH = 'models/RRDB_ESRGAN_x4.pth'
-DEVICE = torch.device('cuda')#'cuda' if torch.cuda.is_available() else
+DEVICE = torch.device('cpu')#'cuda' if torch.cuda.is_available() else
 MODEL = arch.RRDBNet(3, 3, 64, 23, gc=32).to(DEVICE)
 MODEL.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE), strict=True)
 MODEL.eval()
